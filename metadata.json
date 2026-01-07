@@ -1,0 +1,7 @@
+{
+  "name": "MatchIn PDF Studio",
+  "description": "Uma plataforma inteligente para estudar PDFs, com leitura em voz alta e geração automática de flashcards para memorização.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
