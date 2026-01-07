@@ -84,6 +84,31 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      {/* Loading Overlay for Flashcard Generation */}
+      {isGenerating && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-indigo-900/40 backdrop-blur-md transition-all duration-300">
+          <div className="bg-white p-10 rounded-3xl shadow-2xl flex flex-col items-center max-w-sm text-center animate-in fade-in zoom-in duration-300">
+            <div className="relative mb-6">
+              <div className="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center animate-pulse">
+                <i className="fa-solid fa-wand-magic-sparkles text-4xl text-indigo-600"></i>
+              </div>
+              <div className="absolute top-0 right-0">
+                <i className="fa-solid fa-spinner fa-spin text-xl text-indigo-400"></i>
+              </div>
+            </div>
+            <h3 className="text-xl font-bold text-slate-900 mb-2">Criando seus Flashcards</h3>
+            <p className="text-slate-600">
+              Nossa IA está analisando seu PDF para criar as melhores perguntas para você...
+            </p>
+            <div className="mt-6 flex gap-1">
+              <div className="w-2 h-2 bg-indigo-600 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+              <div className="w-2 h-2 bg-indigo-600 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+              <div className="w-2 h-2 bg-indigo-600 rounded-full animate-bounce"></div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Header */}
       <header className="glass sticky top-0 z-40 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
